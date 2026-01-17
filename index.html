@@ -5,98 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amit's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* Reset & base */
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            line-height:1.6;
-            color:#eee;
-            background:#111; /* Dark background */
-            scroll-behavior:smooth;
-            margin:0;
-        }
-
-        header {
-            position:fixed;
-            top:0;
-            width:100%;
-            text-align:center;
-            background:#111;
-            color:#eee;
-            padding:1rem 2rem;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            box-shadow:0 2px 8px rgba(0,0,0,0.5);
-            z-index:1000;
-        }
-
-        header nav a {
-            margin-left:2rem;
-            font-weight:600;
-            cursor:pointer;
-            transition:0.3s;
-            color:#eee;
-        }
-
-        header nav a:hover { color:#0071e3; }
-
-        section { padding:6rem 2rem; max-width:1200px; margin:0 auto; }
-        h2 { font-size:2rem; margin-bottom:2rem; font-weight:800; text-align:center; color:#fff; }
-
-        /* Hero Section */
-        .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 2rem; background:#111; }
-        .hero-text h1 { font-size:3rem; font-weight:800; margin-bottom:1rem; }
-        .hero-text p { font-size:1.25rem; color:#ccc; max-width:600px; }
-        .scroll-down { margin-top:3rem; font-size:2rem; color:#0071e3; animation: bounce 2s infinite; }
-        @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(10px);}60%{transform:translateY(5px);} }
-
-        .hero-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            text-align: left;
-        }
-
-        .hero-text { max-width: 600px; }
-
-        .hero-image img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #0071e3;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-        }
-
-        /* Education / Experience / Projects */
-        .edu-card, .exp-card, .project-card { background:#1c1c1c; color:#eee; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.5); transition: transform 0.3s, box-shadow 0.3s; }
-        .edu-card h3, .exp-card h3, .project-card h3 { font-weight:700; margin-bottom:0.5rem; }
-        .edu-card p, .exp-card p, .project-card p { color:#ccc; margin-bottom:0.5rem; }
-        .exp-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.7); }
-
-        /* Skills */
-        .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
-        .skill { background:#333; padding:0.5rem 1rem; border-radius:50px; font-weight:600; color:#eee; }
-
-        /* Contact */
-        .contact a { display:inline-block; margin-right:2rem; margin-bottom:1rem; font-weight:600; color:#0071e3; }
-
-        /* Responsive */
-        @media(max-width:768px){
-            .hero-content { flex-direction: column; text-align: center; }
-            .hero-image img { width:200px; height:200px; }
-            header nav a { margin-left:1rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-        <nav>
+    <nav>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
@@ -106,11 +20,12 @@
     </nav>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero" id="hero">
-    <div class="hero-content">
+    <div class="hero-content fade-section">
         <div class="hero-text">
-            <h1>Amit Kumar Yadav</h1>
-            <p>Master’s(M. Tech. EE ) Student at IIT Gandhinagar | 5G NR Protocol Developer | Wireless Communication | Python & C++ Enthusiast</p>
+            <h1>Amit</h1>
+            <p>Master’s (M. Tech. EE) Student at IIT Gandhinagar | AI in Wireless Communication Researcher | 5G NR Protocol Developer | Python & C++ Enthusiast</p>
         </div>
         <div class="hero-image">
             <img src="amit.jpg" alt="Amit Photo">
@@ -119,12 +34,14 @@
     <div class="scroll-down">⌄</div>
 </section>
 
-<section id="about">
+<!-- ABOUT -->
+<section id="about" class="fade-section">
     <h2>About Me</h2>
     <p>I am a Master’s student at IIT Gandhinagar and a former 5G NR Protocol Developer at JIO Reliance Infocom. I specialize in advanced wireless communication, NLP, and computer vision, with strong expertise in Python and C++ programming.</p>
 </section>
 
-<section id="education">
+<!-- EDUCATION -->
+<section id="education" class="fade-section">
     <h2>Education</h2>
     <div class="education">
         <div class="edu-card">
@@ -142,7 +59,8 @@
     </div>
 </section>
 
-<section id="experience">
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-section">
     <h2>Experience</h2>
     <div class="exp-card">
         <h3>Master’s Student | IIT Gandhinagar</h3>
@@ -166,31 +84,14 @@
     </div>
 </section>
 
-<section id="projects">
+<!-- PROJECTS -->
+<section id="projects" class="fade-section">
     <h2>Projects</h2>
-    <div class="project-card">
-        <h3>MBWPs CCDU</h3>
-        <p>Refactored code to support CCDU BWP edge cases and Long PUCCH formats.</p>
-    </div>
-    <div class="project-card">
-        <h3>MBWPs</h3>
-        <p>Implemented resource dimensioning in RRM, reorganized code to split Multi-BWPs for UE compatibility.</p>
-    </div>
-    <div class="project-card">
-        <h3>MOCN</h3>
-        <p>Enabled Multi-Operator Core Network with multiple PLMNs and handled F1AP message-based PLMN logic.</p>
-    </div>
-    <div class="project-card">
-        <h3>NRPPA</h3>
-        <p>Built end-to-end NR Positioning Protocol transaction, updating UE mobility to LMF via AMF over F1AP.</p>
-    </div>
-    <div class="project-card">
-        <h3>UAC Barring</h3>
-        <p>Added UAC parameters to SIB1 for controlled UE service access.</p>
-    </div>
+    <div id="project-list"></div>
 </section>
 
-<section id="skills">
+<!-- SKILLS -->
+<section id="skills" class="fade-section">
     <h2>Skills</h2>
     <div class="skills">
         <div class="skill">Python</div>
@@ -206,14 +107,16 @@
     </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
+<section id="contact" class="fade-section">
     <h2>Contact</h2>
     <div class="contact">
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+        <a href="mailto:amitkmrydv007@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/amit-kumar-yadav-091875196/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/amitkmrydv" target="_blank">GitHub</a>
     </div>
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>
