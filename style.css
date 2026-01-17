@@ -11,3 +11,37 @@ header {
 section {
   margin-top: 30px;
 }
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
