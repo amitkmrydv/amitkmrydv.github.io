@@ -1,32 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Amit | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; line-height:1.6; color:#111; background:#fff; scroll-behavior:smooth; }
+        a { text-decoration:none; color: inherit; }
+
+        /* Header */
+        header { position:fixed; top:0; width:100%; background:#fff; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.05); z-index:1000; }
+        header nav a { margin-left:2rem; font-weight:600; cursor:pointer; transition:0.3s; }
+        header nav a:hover { color:#0071e3; }
+
+        /* Hero Section */
+        .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:#f7f7f7; padding:0 2rem; }
+        .hero h1 { font-size:3rem; font-weight:800; margin-bottom:1rem; }
+        .hero p { font-size:1.25rem; color:#555; max-width:600px; }
+        .scroll-down { margin-top:3rem; font-size:2rem; color:#0071e3; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(10px);}60%{transform:translateY(5px);} }
+
+        /* Sections */
+        section { padding:6rem 2rem; max-width:1200px; margin:0 auto; }
+        h2 { font-size:2rem; margin-bottom:2rem; font-weight:800; text-align:center; }
+
+        /* Education */
+        .education .edu-card { background:#f7f7f7; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+        .edu-card h3 { font-weight:700; margin-bottom:0.5rem; }
+        .edu-card p { color:#555; }
+
+        /* Experience / Projects */
+        .exp-card, .project-card { background:#f7f7f7; padding:1.5rem; border-radius:12px; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+        .exp-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+        .exp-card h3, .project-card h3 { font-weight:700; margin-bottom:0.5rem; }
+        .exp-card p, .project-card p { color:#555; margin-bottom:0.5rem; }
+
+        /* Skills */
+        .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
+        .skill { background:#f0f0f0; padding:0.5rem 1rem; border-radius:50px; font-weight:600; }
+
+        /* Contact */
+        .contact a { display:inline-block; margin-right:2rem; margin-bottom:1rem; font-weight:600; color:#0071e3; }
+
+        /* Responsive */
+        @media(max-width:768px){
+            .hero h1 { font-size:2.2rem; }
+            header nav a { margin-left:1rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
+
+<header>
+    <div class="logo"><strong>Amit</strong></div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="hero">
     <h1>Amit</h1>
-    <p>Software Engineer | Web Developer</p>
-  </header>
+    <p>Master’s Student at IIT Gandhinagar | 5G NR Protocol Developer | Python & C++ Enthusiast</p>
+    <div class="scroll-down">⌄</div>
+</section>
 
-  <section>
+<section id="about">
     <h2>About Me</h2>
-    <p>I build web apps and love problem-solving.</p>
-  </section>
+    <p>I am a Master’s student at IIT Gandhinagar and a former 5G NR Protocol Developer at JIO Reliance Infocom. I specialize in advanced wireless communication, NLP, and computer vision, with strong expertise in Python and C++ programming.</p>
+</section>
 
-  <section>
+<section id="education">
+    <h2>Education</h2>
+    <div class="education">
+        <div class="edu-card">
+            <h3>B.Tech - Z.H.C.E.T., A.M.U.</h3>
+            <p>CPI: 8.77 | 2018-2022</p>
+        </div>
+        <div class="edu-card">
+            <h3>Class XII - City School, A.M.U.</h3>
+            <p>Percentage: 79% | 2017-2018</p>
+        </div>
+        <div class="edu-card">
+            <h3>Class X - City School, A.M.U.</h3>
+            <p>Percentage: 87% | 2015-2016</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="exp-card">
+        <h3>Master’s Student | IIT Gandhinagar</h3>
+        <p>Jul 2025 - Present</p>
+        <p>Courses: NLP, Computer Vision, Advanced Wireless Communication, 5G Communication</p>
+    </div>
+    <div class="exp-card">
+        <h3>5G NR Protocol Developer | JIO Reliance Infocom PVT. LTD.</h3>
+        <p>July 2022 – July 2025</p>
+        <p>Worked on MBWPs CCDU, MBWPs, MOCN, NRPPA, UAC Barring projects with real UE and Keysight setups.</p>
+    </div>
+    <div class="exp-card">
+        <h3>Research and Development Intern | E&E Solution, Aligarh</h3>
+        <p>May 2022 – June 2022</p>
+        <p>Integrated ModbusTCP with Python GUI, upgraded IoT devices using TinyGSM library for 4G paradigm.</p>
+    </div>
+    <div class="exp-card">
+        <h3>Submarine Acoustics Detection | National Oceanographic Center, UK</h3>
+        <p>March 2021 - Jan 2022</p>
+        <p>2D wavelet analysis of spatiotemporal signals from the ocean bed as part of final year project.</p>
+    </div>
+</section>
+
+<section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li>Resume Builder using ChatGPT</li>
-      <li>5G Frame Structure Analyzer</li>
-    </ul>
-  </section>
+    <div class="project-card">
+        <h3>MBWPs CCDU</h3>
+        <p>Refactored code to support CCDU BWP edge cases and Long PUCCH formats.</p>
+    </div>
+    <div class="project-card">
+        <h3>MBWPs</h3>
+        <p>Implemented resource dimensioning in RRM, reorganized code to split Multi-BWPs for UE compatibility.</p>
+    </div>
+    <div class="project-card">
+        <h3>MOCN</h3>
+        <p>Enabled Multi-Operator Core Network with multiple PLMNs and handled F1AP message-based PLMN logic.</p>
+    </div>
+    <div class="project-card">
+        <h3>NRPPA</h3>
+        <p>Built end-to-end NR Positioning Protocol transaction, updating UE mobility to LMF via AMF over F1AP.</p>
+    </div>
+    <div class="project-card">
+        <h3>UAC Barring</h3>
+        <p>Added UAC parameters to SIB1 for controlled UE service access.</p>
+    </div>
+</section>
 
-  <section>
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">C</div>
+        <div class="skill">C++</div>
+        <div class="skill">Simnovous</div>
+        <div class="skill">Keysight</div>
+        <div class="skill">Real UE</div>
+        <div class="skill">RHEL-based PAL setup</div>
+        <div class="skill">Valgrind</div>
+        <div class="skill">Klocwork</div>
+        <div class="skill">Gprof</div>
+    </div>
+</section>
+
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email: amit@email.com</p>
-  </section>
+    <div class="contact">
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    </div>
+</section>
+
 </body>
 </html>
